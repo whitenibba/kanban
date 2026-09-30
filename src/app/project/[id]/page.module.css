@@ -1,0 +1,371 @@
+/* Styles extracted from page.js */
+
+.boardContainer {
+  min-height: 100vh;
+  padding: 20px;
+  background: #f3f4f6;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+.modalTitle {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a !important;
+}
+
+.modalSub {
+  margin: 0 0 24px 0;
+  color: #718096;
+  font-size: 14px;
+}
+
+.authError {
+  padding: 12px;
+  margin-bottom: 16px;
+  background: #fed7d7;
+  border: 1px solid #fc8181;
+  border-radius: 6px;
+  color: #742a2a;
+  font-size: 14px;
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.authButton {
+  width: 100%;
+  padding: 10px 12px;
+  background: #3182ce;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.authButton:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+}
+
+.authButton:not(:disabled):hover {
+  background: #2c5aa0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.navTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a !important;
+}
+
+.logoutButton {
+  padding: 8px 16px;
+  background: #f56565;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logoutButton:hover {
+  background: #e53e3e;
+}
+
+.newTaskButton {
+  padding: 8px 16px;
+  background: #48bb78;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.newTaskButton:hover {
+  background: #38a169;
+}
+
+.columnsWrapper {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  overflow-x: auto;
+}
+
+.columnCard {
+  min-width: 280px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+}
+
+.columnTitle {
+  margin: 0 0 8px 0;
+}
+
+.droppableArea {
+  flex: 1;
+  min-height: 40px;
+  overflow-y: auto;
+  padding: 4px;
+  background: transparent;
+  border-radius: 6px;
+}
+
+.droppableOver {
+  background: #f7fafc;
+}
+
+.taskCard {
+    position: relative;
+  user-select: none;
+  padding: 12px;
+  margin: 0 0 8px 0;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 4px solid transparent; /* spazio per l'indicatore */
+  transition: all 0.3s ease;
+}
+
+
+.taskHighlighted {
+  background-color: #f0f7ff; 
+  border-left: 4px solid #3498db !important; 
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+.taskHighlighted::after {
+  content: "ULTIMO SPOSTAMENTO";
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: #3498db;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+
+.taskDragging {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.priorityBar {
+  width: 10px;
+  height: 40px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.taskContent {
+  flex: 1;
+}
+
+.taskTitle {
+  font-weight: 600;
+}
+
+.taskDescription {
+  font-size: 12px;
+  color: #4a5568;
+}
+
+/* Modal styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.modalContent {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.prioritySlider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #e2e8f0;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.prioritySlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: currentColor;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.prioritySlider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: currentColor;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.modalActions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.buttonCancel {
+  padding: 10px 20px;
+  background: #e2e8f0;
+  color: #2d3748;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.buttonCancel:hover {
+  background: #cbd5e0;
+}
+
+.buttonSubmit {
+  padding: 10px 20px;
+  background: #3182ce;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.buttonSubmit:hover {
+  background: #2c5aa0;
+}
+
+/* Task action buttons */
+.taskActions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.taskCard:hover .taskActions {
+  opacity: 1;
+}
+
+.actionButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionButton:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
